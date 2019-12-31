@@ -49,6 +49,11 @@ for OPENSSL_SHARED in ${OPT_OPENSSL_SHARED[@]} ; do
       ARPATH="$ANDROID_NDK_ROOT/toolchains/x86-${ANDROID_NDK_TOOLCHAIN_VER}/prebuilt/$HOST_PLATFORM/bin/i686-linux-android-ar"
       ANDROID_ARCH="arch-x86"
       OPENSSL_CONFIG="android-x86" ;
+    elif [ "$TYPE" = "x86_64" ] ; then
+      CCPATH="$ANDROID_NDK_ROOT/toolchains/x86-${ANDROID_NDK_TOOLCHAIN_VER}/prebuilt/$HOST_PLATFORM/bin/x86_64-linux-android-gcc"
+      ARPATH="$ANDROID_NDK_ROOT/toolchains/x86-${ANDROID_NDK_TOOLCHAIN_VER}/prebuilt/$HOST_PLATFORM/bin/x86_64-linux-android-ar"
+      ANDROID_ARCH="arch-x86_64"
+      OPENSSL_CONFIG="android-x86_64" ;
     else
       echo "Wat?"
       exit 1 ;
